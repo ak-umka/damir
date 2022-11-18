@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "email": "qqq@gmail.com",
+      "name": "str",
+      "surname": "str",
+      "salary": 2222,
+      "phone": "222222",
+      "cname": "qwe"
+    }
+  ]
+}
