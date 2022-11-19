@@ -66,7 +66,7 @@
         <label
           for="cname"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Cname</label
+          >Country Name</label
         >
         <input
           type="text"
