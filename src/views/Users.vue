@@ -7,11 +7,16 @@
       Add
     </button>
     <div class="flex flex-wrap mx-1 lg:-mx-4">
-      <template v-if="users">
+      <div v-if="users.users === null" class="w-full lg:w-1/3 p-4">
+        <div class="bg-white rounded shadow p-2">
+          <p class="text-gray-800 font-medium">No users found</p>
+        </div>
+      </div>
+      <div v-else>
         <div
           class="grid grid-cols-3 my-1 px-1 w-full lg:my-4 lg:px-4"
           v-for="user in users"
-          :key="user.id"
+          :key="user?.id"
         >
           <div class="m-1" v-for="items in user" :key="items.id">
             <article class="overflow-hidden rounded-lg shadow-lg">
@@ -46,7 +51,7 @@
             </article>
           </div>
         </div>
-      </template>
+      </div>
     </div>
   </div>
   <Modal v-model:show="dialogVisible">
@@ -93,22 +98,10 @@ export default defineComponent({
     });
 
     const users = computed(() => {
-      if (store.state.users) {
-        const users = store.state.users;
-        const usersArray = [];
-        for (const user in users) {
-          usersArray.push(users[user]);
-        }
-        return usersArray;
-      } else {
-        return null;
+      if (store.getters.user.length === 0) {
+        return [];
       }
-      // const users = store.getters.user;
-      // const usersArray = [];
-      // for (const user in users) {
-      //   usersArray.push(users[user]);
-      // }
-      // return usersArray;
+      return store.getters.user;
     });
 
     return {
