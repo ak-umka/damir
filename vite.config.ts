@@ -14,5 +14,13 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
+    // cors: false,
+    // proxy: {
+    //   "/api/v0": {
+    //     target: "http://localhost:8000",
+    //     secure: false,
+    //     changeOrigin: true,
+    //   },
+    // },
   },
 });

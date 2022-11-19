@@ -28,7 +28,7 @@ export default {
     async getCountry({ commit }: any) {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/countries"
+          "http://localhost:8000/api/v0/country"
         );
 
         commit("setCountry", response.data?.countries);
@@ -40,7 +40,7 @@ export default {
     async postCountry({ commit }: any, country: COUNTRY_CREATE) {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/countries",
+          "http://localhost:8000/api/v0/country",
           country
         );
         commit("setCountry", response.data);
@@ -53,7 +53,7 @@ export default {
       try {
         const { population } = putCountry;
         const response = await axios.put(
-          `http://localhost:8000/api/v1/countries/${putCountry.cname}`,
+          `http://localhost:8000/api/v0/country/${putCountry.cname}`,
           {
             population: population,
           }
@@ -67,7 +67,7 @@ export default {
     async deleteCountry({ commit }: any, cname: string) {
       try {
         const response = await axios.delete(
-          `http://localhost:8000/api/v1/countries/${cname}`
+          `http://localhost:8000/api/v0/country/${cname}`
         );
         commit("setCountry", response.data);
       } catch (error) {

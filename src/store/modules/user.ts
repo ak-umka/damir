@@ -28,7 +28,7 @@ export default {
   actions: {
     async getUser({ commit }: any) {
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/users");
+        const response = await axios.get("http://localhost:8000/api/v0/users");
         commit("setUser", response.data);
       } catch (error) {
         console.log(error);
@@ -38,7 +38,7 @@ export default {
     async postUser({ commit }: any, user: USER_CREATE) {
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/v1/users",
+          "http://localhost:8000/api/v0/users",
           user
         );
         commit("setUser", response.data);
@@ -50,7 +50,7 @@ export default {
     async putUser({ commit }: any, editUser: USER_CREATE) {
       try {
         const response = await axios.put(
-          `http://localhost:8000/api/v1/users/${editUser.email}`,
+          `http://localhost:8000/api/v0/users/${editUser.email}`,
           {
             name: editUser.name,
             surname: editUser.surname,
@@ -69,7 +69,7 @@ export default {
     async deleteUser({ commit }: any, email: string) {
       try {
         const response = await axios.delete(
-          `http://localhost:8000/api/v1/users/${email}`
+          `http://localhost:8000/api/v0/users/${email}`
         );
         commit("setUser", response.data);
       } catch (error) {
