@@ -59,7 +59,6 @@ export default {
             cname: editUser.cname,
           }
         );
-        console.log(editUser);
         commit("setUser", response.data);
       } catch (error) {
         console.log(error);

@@ -4,18 +4,26 @@
       <div
         class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
       >
-        <RouterLink to="/" class="text-white"> LOGO </RouterLink>
         <div
           class="flex justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
         >
-          <RouterLink to="/countries" class="text-white mr-8">Catalog</RouterLink>
-          <RouterLink to="/" class="text-white mr-8">Search</RouterLink>
-          <RouterLink to="/" class="text-white mr-8">Forum</RouterLink>
-          <RouterLink to="/" class="text-white mr-8">FAQ</RouterLink>
-        </div>
-        <div class="flex justify-between lg:order-2">
-          <RouterLink to="/login" class="text-white mr-8">Sign In</RouterLink>
-          <RouterLink to="/register" class="text-white">Sign up</RouterLink>
+          <RouterLink to="/" class="text-white mr-8">Country</RouterLink>
+          <RouterLink to="/users" class="text-white mr-8">User</RouterLink>
+          <RouterLink to="/doctors" class="text-white mr-8">Doctor</RouterLink>
+          <RouterLink to="/discover" class="text-white mr-8"
+            >Discover</RouterLink
+          >
+          <RouterLink to="/publicservant" class="text-white mr-8"
+            >Public Servant</RouterLink
+          >
+          <RouterLink to="/specialize" class="text-white mr-8"
+            >Specialize</RouterLink
+          >
+          <RouterLink to="/diseasetypes" class="text-white mr-8"
+            >Disease Type</RouterLink
+          >
+          <RouterLink to="/disease" class="text-white mr-8">Disease</RouterLink>
+          <RouterLink to="/record" class="text-white mr-8">Record</RouterLink>
         </div>
       </div>
     </div>
