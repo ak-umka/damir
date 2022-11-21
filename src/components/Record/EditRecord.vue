@@ -88,19 +88,19 @@ export default defineComponent({
     const store = useStore();
 
     const record = reactive({
-      password: "",
-      phone: "",
-      salary: "",
       cname: "",
+      disease_code: "",
+      total_deaths: 0,
+      total_patients: 0,
     });
 
     async function editRecord() {
       const data = {
         email: this.propsEmail,
-        password: record.password,
-        phone: record.phone,
-        salary: record.salary,
         cname: record.cname,
+        disease_code: record.disease_code,
+        total_deaths: record.total_deaths,
+        total_patients: record.total_patients,
       };
       await store.dispatch("putRecord", data);
       await store.dispatch("getRecord");
